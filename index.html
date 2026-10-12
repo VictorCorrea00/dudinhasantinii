@@ -172,9 +172,162 @@
       transition: all .3s; z-index: 10;
     }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ====== GIFT BRIDGE / PRE-LANDER OVERLAY ====== */
+    .gift-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: radial-gradient(circle at 50% 30%, rgba(35, 18, 25, 0.95), rgba(10, 8, 12, 0.98));
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .gift-card {
+      max-width: 380px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      padding: 36px 24px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(232, 134, 143, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.85); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .gift-icon-wrapper {
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .gift-emoji {
+      font-size: 72px;
+      line-height: 1;
+      display: inline-block;
+      animation: giftFloat 2.6s ease-in-out infinite;
+      filter: drop-shadow(0 10px 20px rgba(232, 134, 143, 0.5));
+    }
+
+    @keyframes giftFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+      50% { transform: translateY(-10px) rotate(-4deg) scale(1.06); }
+    }
+
+    .gift-glow {
+      position: absolute;
+      inset: -15px;
+      background: radial-gradient(circle, rgba(232, 134, 143, 0.45) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: -1;
+      animation: pulseGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(0.9); opacity: 0.6; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    .gift-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(232, 134, 143, 0.2);
+      border: 1px solid rgba(232, 134, 143, 0.4);
+      color: #ffb8c0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .gift-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .gift-subtitle {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .gift-btn {
+      width: 100%;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(255, 117, 140, 0.45);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .gift-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 35px rgba(255, 117, 140, 0.6);
+      filter: brightness(1.05);
+    }
+
+    .gift-btn:active {
+      transform: scale(0.97);
+    }
+
+    .gift-note {
+      margin-top: 16px;
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, 0.45);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
   </style>
 </head>
 <body>
+  <!-- Bridge screen for IG bot protection / Pre-lander -->
+  <div class="gift-overlay" id="giftOverlay">
+    <div class="gift-card" id="giftCard">
+      <div class="gift-icon-wrapper">
+        <div class="gift-emoji">🎁</div>
+        <div class="gift-glow"></div>
+      </div>
+      <div class="gift-badge">EXCLUSIVE ACCESS ✨</div>
+      <h2 class="gift-title">Tap to claim your gift</h2>
+      <p class="gift-subtitle">Toca para ganar el regalo 🤍</p>
+      <button class="gift-btn" id="giftBtn" type="button">
+        <span>CLAIM GIFT 🎁</span>
+      </button>
+      <div class="gift-note">🔒 Instant redirect to private channel</div>
+    </div>
+  </div>
+
   <main class="page">
     <div class="hero" role="img" aria-label="Dudinha Santinii"></div>
 
@@ -205,6 +358,32 @@
   <div class="toast" id="toast">Link copied!</div>
 
   <script>
+    const TELEGRAM_URL = "https://t.me/dudinhasantini2";
+    const giftBtn = document.getElementById('giftBtn');
+    const giftCard = document.getElementById('giftCard');
+
+    let redirected = false;
+    function claimGift() {
+      if (redirected) return;
+      redirected = true;
+      giftBtn.innerHTML = '<span>OPENING GIFT... 💋</span>';
+      giftBtn.style.filter = 'brightness(1.15)';
+      
+      // Fast redirect to Telegram
+      setTimeout(() => {
+        window.location.href = TELEGRAM_URL;
+      }, 350);
+    }
+
+    giftBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      claimGift();
+    });
+
+    giftCard.addEventListener('click', () => {
+      claimGift();
+    });
+
     document.getElementById('shareBtn').addEventListener('click', async () => {
       const data = { title: document.title, url: location.href };
       if (navigator.share) {
