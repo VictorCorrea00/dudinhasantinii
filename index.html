@@ -6,7 +6,7 @@
   <title>Dudinha Santinii</title>
   <meta name="description" content="@dudinhasantinii on link.me" />
   <meta property="og:title" content="Dudinha Santinii" />
-  <meta property="og:image" content="assets/hero.jpg" />
+  <meta property="og:image" content="assets/pink_hero.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -31,7 +31,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ====== GIFT BRIDGE SCREEN (PRE-LANDER) ====== */
+    /* ====== 1. GIFT SCREEN (ANTI-BAN PRE-LANDER) ====== */
     .gift-overlay {
       position: fixed;
       inset: 0;
@@ -46,7 +46,7 @@
 
     .gift-overlay.hidden {
       opacity: 0;
-      transform: scale(1.04);
+      transform: scale(1.05);
       pointer-events: none;
     }
 
@@ -63,6 +63,7 @@
       flex-direction: column;
       align-items: center;
       animation: giftPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+      cursor: pointer;
     }
 
     @keyframes giftPop {
@@ -73,7 +74,6 @@
     .gift-icon-box {
       position: relative;
       margin-bottom: 20px;
-      cursor: pointer;
     }
 
     .gift-emoji {
@@ -167,7 +167,7 @@
       color: rgba(255, 255, 255, 0.45);
     }
 
-    /* ====== MAIN LINK.ME PAGE ====== */
+    /* ====== 2. MAIN LINK.ME PAGE ====== */
     .app-shell {
       width: 100%;
       max-width: 440px;
@@ -180,42 +180,44 @@
       overflow: hidden;
     }
 
-    /* Hero photo section with dark fade */
+    /* Hero section: Pink Top woman shown completely */
     .hero-container {
       position: relative;
       width: 100%;
-      height: 420px;
       background: #000000;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .hero-img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 22%;
-      filter: brightness(0.92) contrast(1.05);
+      height: auto;
       display: block;
+      object-fit: contain;
+      filter: brightness(0.96) contrast(1.04);
     }
 
-    /* Gradient fading hero into black body */
-    .hero-overlay {
+    /* Gradient softly overlaying only the bottom part of the hero */
+    .hero-gradient {
       position: absolute;
-      inset: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 180px;
       background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.15) 0%,
-        rgba(0, 0, 0, 0) 35%,
-        rgba(0, 0, 0, 0.5) 60%,
-        rgba(0, 0, 0, 0.85) 80%,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.5) 45%,
+        rgba(0, 0, 0, 0.85) 75%,
         #000000 100%
       );
+      pointer-events: none;
     }
 
-    /* Profile details overlayed over hero bottom */
+    /* Profile details layered below/over bottom of hero */
     .profile-section {
       position: relative;
-      margin-top: -120px;
+      margin-top: -65px;
       z-index: 10;
       display: flex;
       flex-direction: column;
@@ -238,7 +240,7 @@
       letter-spacing: 0.5px;
       text-transform: uppercase;
       color: #ffffff;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
     }
 
     .verified-badge {
@@ -251,8 +253,9 @@
     .profile-handle {
       font-size: 15px;
       font-weight: 500;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.75);
       margin-bottom: 14px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
     }
 
     /* Social icons pill */
@@ -260,7 +263,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 18px;
     }
 
@@ -273,7 +276,7 @@
       justify-content: center;
       text-decoration: none;
       transition: transform 0.18s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
     }
 
     .social-icon-btn:hover {
@@ -298,14 +301,6 @@
       width: 22px;
       height: 22px;
       fill: #ffffff;
-    }
-
-    .linkme-btn {
-      background: #ff3b77;
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 16px;
-      letter-spacing: -0.5px;
     }
 
     /* Follower counter */
@@ -339,7 +334,7 @@
       gap: 4px;
     }
 
-    /* ====== EXCLUSIVE 18+ CARD ====== */
+    /* ====== 3. EXCLUSIVE 18+ CARD (BLACK BIKINI WITH PLUSHIE) ====== */
     .exclusive-card-container {
       width: 100%;
       padding: 0 16px 20px;
@@ -348,12 +343,12 @@
     .exclusive-card {
       position: relative;
       width: 100%;
-      height: 250px;
+      height: 280px;
       border-radius: 20px;
       overflow: hidden;
       background: #111111;
       border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
       cursor: pointer;
       text-decoration: none;
       display: block;
@@ -362,16 +357,15 @@
 
     .exclusive-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9);
     }
 
     .card-photo {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 25%;
+      object-position: center 20%;
       display: block;
-      transition: filter 0.4s ease, transform 0.4s ease;
     }
 
     /* Blue padlock badge top-left */
@@ -396,80 +390,7 @@
       fill: #ffffff;
     }
 
-    /* Mature content overlay (State 1: Blurred) */
-    .disclaimer-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.42);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 24px 20px;
-      text-align: center;
-      z-index: 4;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    .disclaimer-overlay.unlocked {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .eye-icon {
-      width: 26px;
-      height: 26px;
-      fill: rgba(255, 255, 255, 0.85);
-      margin-bottom: 10px;
-    }
-
-    .disclaimer-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 5px;
-    }
-
-    .disclaimer-sub {
-      font-size: 13px;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 20px;
-      line-height: 1.35;
-      max-width: 260px;
-    }
-
-    .continue-btn {
-      width: 90%;
-      max-width: 260px;
-      height: 44px;
-      background: #ffffff;
-      color: #000000;
-      border: none;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.15s ease, background-color 0.15s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .continue-btn:hover {
-      background: #f0f0f0;
-      transform: scale(1.02);
-    }
-
-    .continue-btn:active {
-      transform: scale(0.97);
-    }
-
-    /* Unlocked bottom label */
+    /* Bottom caption visible initially */
     .unlocked-label {
       position: absolute;
       bottom: 16px;
@@ -480,9 +401,94 @@
       font-weight: 800;
       color: #ffffff;
       letter-spacing: 0.5px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8);
       z-index: 3;
       text-transform: uppercase;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Mature content overlay: STARTS HIDDEN, THEN ANIMATES IN (+18) */
+    .disclaimer-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.48);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 20px;
+      text-align: center;
+      z-index: 4;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+    }
+
+    /* When activated, it covers the photo */
+    .disclaimer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .eye-icon {
+      width: 28px;
+      height: 28px;
+      fill: rgba(255, 255, 255, 0.9);
+      margin-bottom: 10px;
+      animation: pulseEye 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseEye {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .disclaimer-title {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 5px;
+    }
+
+    .disclaimer-sub {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 20px;
+      line-height: 1.35;
+      max-width: 260px;
+    }
+
+    .continue-btn {
+      width: 90%;
+      max-width: 260px;
+      height: 46px;
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .continue-btn:hover {
+      background: #f0f0f0;
+      transform: scale(1.02);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.5);
+    }
+
+    .continue-btn:active {
+      transform: scale(0.97);
     }
 
     /* ====== FOOTER ====== */
@@ -551,10 +557,10 @@
   <!-- ====== 2. CLONED LINK.ME STYLE PROFILE ====== -->
   <main class="app-shell">
 
-    <!-- Hero Image with smooth fade -->
+    <!-- Top Hero Image: Pink top woman shown COMPLETELY -->
     <div class="hero-container">
-      <img src="assets/hero.jpg" alt="Dudinha Santinii" class="hero-img" />
-      <div class="hero-overlay"></div>
+      <img src="assets/pink_hero.jpg" alt="Dudinha Santinii" class="hero-img" />
+      <div class="hero-gradient"></div>
     </div>
 
     <!-- Profile Header Info -->
@@ -591,7 +597,7 @@
       <div class="section-headline">What you're looking for 👇</div>
     </div>
 
-    <!-- Exclusive Card Section -->
+    <!-- Exclusive Card Section: Black bikini with plushie -->
     <div class="exclusive-card-container">
       <div class="exclusive-card" id="exclusiveCard">
         <!-- Padlock Badge -->
@@ -601,10 +607,13 @@
           </svg>
         </div>
 
-        <!-- Exclusive Preview Photo -->
-        <img src="assets/exclusive.jpg" alt="Exclusive Content" class="card-photo" id="cardPhoto" />
+        <!-- Exclusive Preview Photo (Initially CLEAR and VISIBLE) -->
+        <img src="assets/bikini_card.jpg" alt="Exclusive Content" class="card-photo" id="cardPhoto" />
 
-        <!-- Mature Content Disclaimer Overlay -->
+        <!-- Unlocked bottom label (visible while unblurred) -->
+        <div class="unlocked-label" id="unlockedLabel">EXCLUSIVE CLICK ME :)</div>
+
+        <!-- Mature Content Disclaimer Overlay (Appears after delay) -->
         <div class="disclaimer-overlay" id="disclaimerOverlay">
           <!-- Eye slashed SVG -->
           <svg class="eye-icon" viewBox="0 0 24 24">
@@ -616,9 +625,6 @@
             Continue (18+)
           </button>
         </div>
-
-        <!-- Unlocked text shown underneath -->
-        <div class="unlocked-label">EXCLUSIVE CLICK ME :)</div>
       </div>
     </div>
 
@@ -640,17 +646,35 @@
   <script>
     const TELEGRAM_URL = "https://t.me/dudinhasantini2";
 
-    // 1. Gift Pre-lander logic: Tapping gift unlocks/reveals the Link.me clone
     const giftOverlay = document.getElementById('giftOverlay');
     const giftBtn = document.getElementById('giftBtn');
     const giftCard = document.getElementById('giftCard');
 
+    const exclusiveCard = document.getElementById('exclusiveCard');
+    const continueBtn = document.getElementById('continueBtn');
+    const disclaimerOverlay = document.getElementById('disclaimerOverlay');
+    const unlockedLabel = document.getElementById('unlockedLabel');
+
+    let lockTimeout = null;
+
+    // Trigger the +18 disclaimer overlay after delay
+    function scheduleMatureDisclaimer() {
+      // The bottom photo is visible first for 1.3 seconds, then locks behind +18 disclaimer!
+      lockTimeout = setTimeout(() => {
+        disclaimerOverlay.classList.add('active');
+        if (unlockedLabel) unlockedLabel.style.opacity = '0';
+      }, 1300);
+    }
+
+    // 1. Gift Pre-lander logic
     function revealPage() {
       giftBtn.innerHTML = '<span>UNLOCKED ✨</span>';
       giftBtn.style.filter = 'brightness(1.15)';
       
       setTimeout(() => {
         giftOverlay.classList.add('hidden');
+        // Once the gift screen opens, start the timer to show the bottom photo first, then lock!
+        scheduleMatureDisclaimer();
       }, 300);
     }
 
@@ -663,21 +687,16 @@
       revealPage();
     });
 
-    // 2. Mature Disclaimer & Exclusive Card Click: Redirects to Telegram
-    const exclusiveCard = document.getElementById('exclusiveCard');
-    const continueBtn = document.getElementById('continueBtn');
-    const disclaimerOverlay = document.getElementById('disclaimerOverlay');
-
+    // 2. Click logic: clicking the card or Continue (18+) redirects to Telegram
     function goToTelegram(e) {
       if (e) e.stopPropagation();
-
-      // Show unblurred card briefly with feedback
-      disclaimerOverlay.classList.add('unlocked');
-      
-      // Direct redirect to Telegram
+      if (continueBtn) {
+        continueBtn.textContent = 'Redirecting... 💋';
+        continueBtn.style.opacity = '0.9';
+      }
       setTimeout(() => {
         window.location.href = TELEGRAM_URL;
-      }, 350);
+      }, 250);
     }
 
     continueBtn.addEventListener('click', goToTelegram);
