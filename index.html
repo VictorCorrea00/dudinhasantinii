@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Dudinha Santinii | Exclusive VIP</title>
-  <meta name="description" content="@dudinhasantinii on link.me - Uncensored VIP & Telegram" />
-  <meta property="og:title" content="Dudinha Santinii | Uncensored VIP" />
+  <title>Dudinha Santinii</title>
+  <meta name="description" content="@dudinhasantinii on link.me" />
+  <meta property="og:title" content="Dudinha Santinii" />
   <meta property="og:image" content="assets/pink_hero.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,7 +36,7 @@
       position: fixed;
       inset: 0;
       z-index: 99999;
-      background: radial-gradient(circle at 50% 35%, #271420 0%, #0d0910 70%, #000000 100%);
+      background: radial-gradient(circle at 50% 35%, #24131d 0%, #0c080e 70%, #000000 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -180,7 +180,7 @@
       overflow: hidden;
     }
 
-    /* Hero section: Pink Top woman shown COMPLETELY */
+    /* Hero section: Pink Top woman shown completely */
     .hero-container {
       position: relative;
       width: 100%;
@@ -194,27 +194,27 @@
       height: auto;
       display: block;
       object-fit: contain;
-      filter: brightness(0.96) contrast(1.04);
+      filter: brightness(0.98) contrast(1.03);
     }
 
-    /* Gradient softly overlaying only the bottom part of the hero */
+    /* Soft bottom fade */
     .hero-gradient {
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
-      height: 180px;
+      height: 170px;
       background: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0) 0%,
         rgba(0, 0, 0, 0.5) 45%,
-        rgba(0, 0, 0, 0.85) 75%,
+        rgba(0, 0, 0, 0.88) 75%,
         #000000 100%
       );
       pointer-events: none;
     }
 
-    /* Profile details layered below/over bottom of hero */
+    /* Profile details layered over hero bottom */
     .profile-section {
       position: relative;
       margin-top: -65px;
@@ -343,7 +343,7 @@
       letter-spacing: 0.2px;
     }
 
-    /* ====== 3. PRIMARY HERO OFFER: STACKED UNCENSORED VIP ====== */
+    /* ====== 3. STACKED 18+ CARD (PHOTO CLEARLY VISIBLE WITH 18+ OVERLAY) ====== */
     .exclusive-card-container {
       width: 100%;
       padding: 0 16px 14px;
@@ -356,8 +356,8 @@
       border-radius: 22px;
       overflow: hidden;
       background: #111111;
-      border: 1px solid rgba(255, 77, 109, 0.35);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 77, 109, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
       cursor: pointer;
       text-decoration: none;
       display: block;
@@ -366,7 +366,7 @@
 
     .exclusive-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 77, 109, 0.35);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.95);
     }
 
     .card-photo {
@@ -375,6 +375,7 @@
       object-fit: cover;
       object-position: center 20%;
       display: block;
+      transition: filter 0.3s ease, transform 0.3s ease;
     }
 
     /* Blue padlock badge top-left */
@@ -382,33 +383,33 @@
       position: absolute;
       top: 14px;
       left: 14px;
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       background: #2a82fe;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 5;
-      box-shadow: 0 4px 10px rgba(42, 130, 254, 0.5);
+      box-shadow: 0 4px 10px rgba(42, 130, 254, 0.45);
     }
 
     .lock-badge svg {
-      width: 17px;
-      height: 17px;
+      width: 16px;
+      height: 16px;
       fill: #ffffff;
     }
 
-    /* Top right hot pill */
+    /* Top right tag */
     .vip-fire-pill {
       position: absolute;
       top: 14px;
       right: 14px;
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 77, 109, 0.6);
-      color: #ff758c;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ff94a8;
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.8px;
@@ -420,34 +421,37 @@
       gap: 4px;
     }
 
-    /* Bottom caption visible initially */
+    /* Unlocked label shown when disclaimer is clicked/revealed */
     .unlocked-label {
       position: absolute;
-      bottom: 14px;
+      bottom: 16px;
       left: 0;
       right: 0;
       text-align: center;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: 0.5px;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 0, 0, 0.9);
       z-index: 3;
       text-transform: uppercase;
-      transition: opacity 0.4s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
-    /* Mature content overlay: STARTS HIDDEN, THEN ANIMATES IN (+18) */
+    /* MATURE CONTENT DISCLAIMER OVERLAY:
+       Semi-transparent so the photo is CLEARLY VISIBLE through it, exactly like the reference! */
     .disclaimer-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(10, 6, 12, 0.65);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.18) 0%,
+        rgba(0, 0, 0, 0.42) 50%,
+        rgba(0, 0, 0, 0.82) 100%
+      );
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -455,95 +459,69 @@
       padding: 24px 20px;
       text-align: center;
       z-index: 4;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .disclaimer-overlay.unlocked {
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
-    }
-
-    /* When activated, it covers the photo */
-    .disclaimer-overlay.active {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
     }
 
     .eye-icon {
       width: 26px;
       height: 26px;
-      fill: #ff758c;
+      fill: rgba(255, 255, 255, 0.9);
       margin-bottom: 8px;
-      animation: pulseEye 2s ease-in-out infinite;
-    }
-
-    @keyframes pulseEye {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.12); }
-    }
-
-    .disclaimer-badge {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      color: #ff94a8;
-      text-transform: uppercase;
-      margin-bottom: 4px;
     }
 
     .disclaimer-title {
-      font-size: 18px;
-      font-weight: 900;
+      font-size: 16px;
+      font-weight: 700;
       color: #ffffff;
-      margin-bottom: 6px;
-      line-height: 1.25;
-      letter-spacing: -0.2px;
+      margin-bottom: 5px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
     }
 
     .disclaimer-sub {
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 400;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.85);
       margin-bottom: 18px;
-      line-height: 1.4;
-      max-width: 290px;
+      line-height: 1.35;
+      max-width: 270px;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
     }
 
     .continue-btn {
-      width: 100%;
-      max-width: 280px;
-      height: 48px;
-      background: linear-gradient(135deg, #ff4d6d 0%, #ff758c 100%);
-      color: #ffffff;
+      width: 90%;
+      max-width: 260px;
+      height: 46px;
+      background: #ffffff;
+      color: #000000;
       border: none;
       border-radius: 999px;
-      font-size: 14.5px;
-      font-weight: 800;
+      font-size: 15px;
+      font-weight: 700;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
-      box-shadow: 0 8px 24px rgba(255, 77, 109, 0.45);
+      transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
     }
 
     .continue-btn:hover {
+      background: #f0f0f0;
       transform: scale(1.02);
-      filter: brightness(1.1);
-      box-shadow: 0 10px 30px rgba(255, 77, 109, 0.6);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.6);
     }
 
     .continue-btn:active {
       transform: scale(0.97);
     }
 
-    .disclaimer-footnote {
-      margin-top: 10px;
-      font-size: 11px;
-      color: rgba(255, 255, 255, 0.45);
-    }
-
-    /* ====== 4. SECONDARY OFFER: TELEGRAM VIP (SIN CENSURA) ====== */
+    /* ====== 4. TELEGRAM VIP CARD (WITH PHOTO THUMBNAIL) ====== */
     .link-cards-section {
       width: 100%;
       padding: 0 16px 20px;
@@ -554,24 +532,24 @@
 
     .tg-vip-card {
       position: relative;
-      background: linear-gradient(135deg, rgba(42, 171, 238, 0.12) 0%, rgba(34, 158, 217, 0.05) 100%);
-      border: 1px solid rgba(42, 171, 238, 0.35);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 20px;
-      padding: 16px 18px;
+      padding: 14px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       text-decoration: none;
       color: #ffffff;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 0 25px rgba(42, 171, 238, 0.15);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
 
     .tg-vip-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.7), 0 0 35px rgba(42, 171, 238, 0.25);
-      border-color: rgba(42, 171, 238, 0.6);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.7);
+      border-color: rgba(42, 171, 238, 0.5);
     }
 
     .tg-vip-card:active {
@@ -585,21 +563,41 @@
       flex: 1;
     }
 
-    .tg-icon-circle {
-      width: 50px;
-      height: 50px;
+    /* Circular model preview with Telegram badge */
+    .tg-avatar-wrap {
+      position: relative;
+      width: 54px;
+      height: 54px;
+      flex-shrink: 0;
+    }
+
+    .tg-avatar-img {
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
-      background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+      object-fit: cover;
+      object-position: center 20%;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      display: block;
+    }
+
+    .tg-badge-icon {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #2AABEE;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 6px 16px rgba(42, 171, 238, 0.4);
+      border: 2px solid #000000;
     }
 
-    .tg-icon-circle svg {
-      width: 26px;
-      height: 26px;
+    .tg-badge-icon svg {
+      width: 12px;
+      height: 12px;
       fill: #ffffff;
     }
 
@@ -620,7 +618,7 @@
       font-weight: 800;
       letter-spacing: 1px;
       color: #2AABEE;
-      background: rgba(42, 171, 238, 0.18);
+      background: rgba(42, 171, 238, 0.16);
       padding: 3px 8px;
       border-radius: 999px;
       display: inline-block;
@@ -714,7 +712,7 @@
       </div>
       <div class="gift-tag">EXCLUSIVE ACCESS ✨</div>
       <h1 class="gift-title">Tap to claim your gift</h1>
-      <p class="gift-subtitle">Toca para ganar el regalo 🤍</p>
+      <p class="gift-subtitle">Touch to unlock your special surprise 🤍</p>
       <button class="gift-btn" id="giftBtn" type="button">
         <span>CLAIM GIFT 🎁</span>
       </button>
@@ -725,7 +723,7 @@
   <!-- ====== 2. CLONED LINK.ME STYLE PROFILE ====== -->
   <main class="app-shell">
 
-    <!-- Top Hero Image: Pink top woman shown COMPLETELY -->
+    <!-- Top Hero Image: Pink top woman shown completely -->
     <div class="hero-container">
       <img src="assets/pink_hero.jpg" alt="Dudinha Santinii" class="hero-img" />
       <div class="hero-gradient"></div>
@@ -781,46 +779,46 @@
           </svg>
         </div>
 
-        <div class="vip-fire-pill">🔥 100% SIN CENSURA</div>
+        <div class="vip-fire-pill">🔥 100% UNCENSORED</div>
 
-        <!-- Exclusive Preview Photo (Initially CLEAR and VISIBLE) -->
+        <!-- Exclusive Preview Photo (Visible through subtle frosted glass) -->
         <img src="assets/bikini_card.jpg" alt="Uncensored Content" class="card-photo" id="cardPhoto" />
 
-        <!-- Unlocked bottom label (visible while unblurred) -->
-        <div class="unlocked-label" id="unlockedLabel">
-          <span>🔥 SUSCRÍBETE SIN CENSURA (CLICK AQUÍ) 🔥</span>
-        </div>
+        <!-- Unlocked bottom label -->
+        <div class="unlocked-label" id="unlockedLabel">EXCLUSIVE CLICK ME :)</div>
 
-        <!-- Mature Content Disclaimer Overlay (Appears after delay for massive CTR) -->
+        <!-- Mature Content Disclaimer Overlay (Translucent so photo is clearly visible) -->
         <div class="disclaimer-overlay" id="disclaimerOverlay">
           <!-- Eye slashed SVG -->
           <svg class="eye-icon" viewBox="0 0 24 24">
             <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.44-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
           </svg>
-          <div class="disclaimer-badge">CONTENIDO EXPLÍCITO +18</div>
-          <div class="disclaimer-title">Suscríbete a mi VIP Sin Censura 🔞</div>
-          <div class="disclaimer-sub">Tapes completos, fotos exclusivas, solo play & nudes diarios 100% explícitos sin restricciones 💦</div>
+          <div class="disclaimer-title">Mature Content Disclaimer</div>
+          <div class="disclaimer-sub">This link may contain graphic or adult content.</div>
           <button class="continue-btn" id="continueBtn" type="button">
-            <span>SUSCRIBIRME SIN CENSURA 💋</span>
+            Continue (18+)
           </button>
-          <div class="disclaimer-footnote">🔒 Acceso directo en Stacked • Cancela cuando quieras</div>
         </div>
       </div>
     </div>
 
-    <!-- ====== 4. SECONDARY OFFER: TELEGRAM VIP (SIN CENSURA) ====== -->
+    <!-- ====== 4. SECONDARY OFFER: TELEGRAM VIP (UNCENSORED) ====== -->
     <div class="link-cards-section">
       <a href="https://t.me/dudinhasantini2" target="_blank" rel="noopener" class="tg-vip-card" id="tgCard">
         <div class="tg-left">
-          <div class="tg-icon-circle">
-            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-1.97 9.28c-.15.65-.53.81-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.22-3.05 5.56-5.02c.24-.22-.05-.34-.38-.13l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.13-.95l11.58-4.46c.54-.2 1.01.13.81.94z"/></svg>
+          <!-- Circular preview thumbnail with Telegram badge -->
+          <div class="tg-avatar-wrap">
+            <img src="assets/pink_hero.jpg" alt="Telegram VIP" class="tg-avatar-img" />
+            <div class="tg-badge-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-1.97 9.28c-.15.65-.53.81-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.22-3.05 5.56-5.02c.24-.22-.05-.34-.38-.13l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.13-.95l11.58-4.46c.54-.2 1.01.13.81.94z"/></svg>
+            </div>
           </div>
           <div class="tg-content">
             <div class="tg-badge-row">
-              <span class="tg-badge">ACCESO VIP 🔞</span>
+              <span class="tg-badge">VIP ACCESS 🔞</span>
             </div>
-            <div class="tg-title">TELEGRAM VIP (SIN CENSURA)</div>
-            <div class="tg-sub">Adelantos calientes, sexting & filtraciones privadas 😈</div>
+            <div class="tg-title">TELEGRAM VIP (UNCENSORED)</div>
+            <div class="tg-sub">Daily spicy leaks, sexting & secret drops 😈</div>
           </div>
         </div>
         <div class="tg-arrow">
@@ -858,17 +856,6 @@
     const unlockedLabel = document.getElementById('unlockedLabel');
     const tgCard = document.getElementById('tgCard');
 
-    let lockTimeout = null;
-
-    // Trigger the +18 disclaimer overlay after delay
-    function scheduleMatureDisclaimer() {
-      // The bottom photo is visible first for 1.3 seconds, then locks behind +18 disclaimer!
-      lockTimeout = setTimeout(() => {
-        disclaimerOverlay.classList.add('active');
-        if (unlockedLabel) unlockedLabel.style.opacity = '0';
-      }, 1300);
-    }
-
     // 1. Gift Pre-lander logic
     function revealPage() {
       giftBtn.innerHTML = '<span>UNLOCKED ✨</span>';
@@ -876,8 +863,6 @@
       
       setTimeout(() => {
         giftOverlay.classList.add('hidden');
-        // Once the gift screen opens, start the timer to show the bottom photo first, then lock!
-        scheduleMatureDisclaimer();
       }, 300);
     }
 
@@ -890,16 +875,17 @@
       revealPage();
     });
 
-    // 2. Click logic: clicking the Main Card or Continue (18+) redirects to STACKED
+    // 2. Click logic: clicking Continue (18+) or card reveals and redirects to STACKED
     function goToStacked(e) {
       if (e) e.stopPropagation();
-      if (continueBtn) {
-        continueBtn.innerHTML = '<span>ABRIENDO VIP... 💋</span>';
-        continueBtn.style.opacity = '0.9';
-      }
+      
+      // Reveal the photo and show "EXCLUSIVE CLICK ME :)"
+      disclaimerOverlay.classList.add('unlocked');
+      if (unlockedLabel) unlockedLabel.style.opacity = '1';
+
       setTimeout(() => {
         window.location.href = STACKED_URL;
-      }, 250);
+      }, 350);
     }
 
     continueBtn.addEventListener('click', goToStacked);
