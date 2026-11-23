@@ -140,7 +140,6 @@
       border-radius: 999px;
       background: linear-gradient(135deg, #ff4d6d 0%, #ff758c 100%);
       color: #ffffff;
-      text-decoration: none;
       font-size: 16px;
       font-weight: 800;
       letter-spacing: 0.5px;
@@ -701,9 +700,9 @@
       <div class="gift-tag">EXCLUSIVE ACCESS ✨</div>
       <h1 class="gift-title">Tap to claim your gift</h1>
       <p class="gift-subtitle">Touch to unlock your special surprise 🤍</p>
-      <a class="gift-btn" id="giftBtn" href="https://paypack.fans/dudinhasantini" target="_blank" rel="noopener noreferrer">
+      <button class="gift-btn" id="giftBtn" type="button">
         <span>CLAIM GIFT 🎁</span>
-      </a>
+      </button>
       <div class="gift-note">🔒 Private invite link • Instant access</div>
     </div>
   </div>
@@ -847,20 +846,23 @@
       }, 1400); // 1.4s delay so user sees the photo first
     }
 
-    // 1. Gift Pre-lander logic: Opens Paypack in a NEW TAB and reveals the page
-    giftBtn.addEventListener('click', () => {
-      giftBtn.innerHTML = '<span>OPENING GIFT... 💋</span>';
+    // 1. Gift Pre-lander logic: Reveals profile page (does NOT open Paypack yet)
+    function revealPage() {
+      giftBtn.innerHTML = '<span>UNLOCKED ✨</span>';
       setTimeout(() => {
         giftOverlay.classList.add('hidden');
         triggerMatureDisclaimer();
-      }, 350);
+      }, 300);
+    }
+
+    giftBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      revealPage();
     });
 
     giftCard.addEventListener('click', (e) => {
       if (!giftBtn.contains(e.target)) {
-        window.open(PAYPACK_URL, '_blank');
-        giftOverlay.classList.add('hidden');
-        triggerMatureDisclaimer();
+        revealPage();
       }
     });
 
