@@ -140,6 +140,7 @@
       border-radius: 999px;
       background: linear-gradient(135deg, #ff4d6d 0%, #ff758c 100%);
       color: #ffffff;
+      text-decoration: none;
       font-size: 16px;
       font-weight: 800;
       letter-spacing: 0.5px;
@@ -700,9 +701,9 @@
       <div class="gift-tag">EXCLUSIVE ACCESS ✨</div>
       <h1 class="gift-title">Tap to claim your gift</h1>
       <p class="gift-subtitle">Touch to unlock your special surprise 🤍</p>
-      <button class="gift-btn" id="giftBtn" type="button">
+      <a class="gift-btn" id="giftBtn" href="https://paypack.fans/dudinhasantini" target="_blank" rel="noopener noreferrer">
         <span>CLAIM GIFT 🎁</span>
-      </button>
+      </a>
       <div class="gift-note">🔒 Private invite link • Instant access</div>
     </div>
   </div>
@@ -846,34 +847,28 @@
       }, 1400); // 1.4s delay so user sees the photo first
     }
 
-    // 1. Gift Pre-lander logic
-    function revealPage() {
-      giftBtn.innerHTML = '<span>UNLOCKED ✨</span>';
-      giftBtn.style.filter = 'brightness(1.15)';
-      
+    // 1. Gift Pre-lander logic: Opens Paypack in a NEW TAB and reveals the page
+    giftBtn.addEventListener('click', () => {
+      giftBtn.innerHTML = '<span>OPENING GIFT... 💋</span>';
       setTimeout(() => {
         giftOverlay.classList.add('hidden');
-        // Start the delayed disclaimer once the gift screen opens
         triggerMatureDisclaimer();
-      }, 300);
-    }
-
-    giftBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      revealPage();
+      }, 350);
     });
 
-    giftCard.addEventListener('click', () => {
-      revealPage();
+    giftCard.addEventListener('click', (e) => {
+      if (!giftBtn.contains(e.target)) {
+        window.open(PAYPACK_URL, '_blank');
+        giftOverlay.classList.add('hidden');
+        triggerMatureDisclaimer();
+      }
     });
 
-    // 2. Click logic: clicking Continue (18+) or card redirects to Paypack
+    // 2. Click logic: clicking Continue (18+) or card opens Paypack in new tab
     function goToPaypack(e) {
       if (e) e.stopPropagation();
-      continueBtn.textContent = 'Redirecting... 💋';
-      setTimeout(() => {
-        window.location.href = PAYPACK_URL;
-      }, 250);
+      continueBtn.textContent = 'Opening VIP... 💋';
+      window.open(PAYPACK_URL, '_blank');
     }
 
     continueBtn.addEventListener('click', goToPaypack);
@@ -882,7 +877,7 @@
     // 3. Secondary Card Click Logic
     tgCard.addEventListener('click', (e) => {
       e.preventDefault();
-      window.location.href = PAYPACK_URL;
+      window.open(PAYPACK_URL, '_blank');
     });
   </script>
 </body>
