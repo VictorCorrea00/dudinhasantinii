@@ -166,7 +166,7 @@
       color: rgba(255, 255, 255, 0.45);
     }
 
-    /* ====== 2. MAIN LINK.ME PAGE ====== */
+    /* ====== 2. MAIN PROFILE PAGE ====== */
     .app-shell {
       width: 100%;
       max-width: 440px;
@@ -177,14 +177,15 @@
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
-      padding-bottom: 20px;
+      padding-bottom: 32px;
     }
 
-    /* Top Photo: Perfectly sized and framed so face AND body/top are clearly visible */
+    /* Hero Photo — full portrait, face + body visible */
     .hero-container {
       position: relative;
       width: 100%;
-      height: 350px;
+      height: 68vh;
+      max-height: 520px;
       background: #000000;
       overflow: hidden;
     }
@@ -194,35 +195,33 @@
       height: 100%;
       display: block;
       object-fit: cover;
-      object-position: center 26%;
-      filter: brightness(0.98) contrast(1.04);
+      object-position: center 18%;
+      filter: brightness(0.97) contrast(1.04);
     }
 
-    /* Soft natural fade from chest/torso down into black body */
+    /* Fade to black at bottom */
     .hero-gradient {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.05) 0%,
-        rgba(0, 0, 0, 0) 25%,
-        rgba(0, 0, 0, 0.35) 55%,
-        rgba(0, 0, 0, 0.8) 78%,
+        rgba(0,0,0,0) 40%,
+        rgba(0,0,0,0.5) 70%,
         #000000 100%
       );
       pointer-events: none;
     }
 
-    /* Profile details naturally positioned with comfortable breathing room */
+    /* Profile name overlapping the bottom of the photo */
     .profile-section {
       position: relative;
-      margin-top: -65px;
+      margin-top: -72px;
       z-index: 10;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 0 20px;
+      padding: 0 20px 8px;
     }
 
     .profile-name-row {
@@ -234,12 +233,12 @@
     }
 
     .profile-name {
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 800;
       letter-spacing: 0.5px;
       text-transform: uppercase;
       color: #ffffff;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
+      text-shadow: 0 2px 18px rgba(0,0,0,0.9);
     }
 
     .verified-badge {
@@ -252,416 +251,68 @@
     .profile-handle {
       font-size: 14.5px;
       font-weight: 500;
-      color: rgba(255, 255, 255, 0.75);
-      margin-bottom: 12px;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+      color: rgba(255,255,255,0.72);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     }
 
-    /* Social icons pill */
-    .social-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .social-icon-btn {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: transform 0.18s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
-    }
-
-    .social-icon-btn:hover {
-      transform: scale(1.08);
-    }
-
-    .ig-btn {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    }
-
-    .ig-btn svg {
-      width: 20px;
-      height: 20px;
-      fill: #ffffff;
-    }
-
-    .tg-btn {
-      background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
-    }
-
-    .tg-btn svg {
-      width: 20px;
-      height: 20px;
-      fill: #ffffff;
-    }
-
-    .paypack-btn {
-      background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-      color: #ffffff;
-      font-weight: 900;
-      font-size: 13px;
-      letter-spacing: 0.5px;
-    }
-
-
-    /* Follower counter */
-    .followers-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 16px;
-    }
-
-    .followers-box svg {
-      width: 14px;
-      height: 14px;
-      stroke: #ffffff;
-      stroke-width: 2.5;
-      fill: none;
-    }
-
-    .section-headline {
-      font-size: 15px;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    /* ====== 3. PRIMARY CONVERTING CARD: PAYPACK VIP ====== */
-    .exclusive-card-container {
+    /* ====== SINGLE BIG CTA BUTTON ====== */
+    .cta-section {
       width: 100%;
-      padding: 0 16px 14px;
+      padding: 24px 20px 0;
     }
 
-    .exclusive-card {
-      position: relative;
+    .cta-main-btn {
       width: 100%;
-      height: 250px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #111111;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.8);
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .exclusive-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.95);
-    }
-
-    /* Bottom photo clearly visible */
-    .card-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
-      display: block;
-    }
-
-    /* Blue padlock badge top-left */
-    .lock-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      width: 32px;
-      height: 32px;
-      background: #2a82fe;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 5;
-      box-shadow: 0 4px 10px rgba(42, 130, 254, 0.45);
-    }
-
-    .lock-badge svg {
-      width: 16px;
-      height: 16px;
-      fill: #ffffff;
-    }
-
-    /* Top right tag: Clear VIP Subscription */
-    .vip-fire-pill {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      background: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 77, 109, 0.6);
-      color: #ff94a8;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      padding: 5px 12px;
-      border-radius: 999px;
-      z-index: 5;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* Initial label shown while photo is unblurred */
-    .unlocked-label {
-      position: absolute;
-      bottom: 14px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-size: 15px;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: 0.5px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 18px rgba(0, 0, 0, 0.9);
-      z-index: 3;
-      text-transform: uppercase;
-      transition: opacity 0.4s ease;
-    }
-
-    /* MATURE CONTENT +18 SUBSCRIPTION OVERLAY (ANIMATES IN AFTER PHOTO IS SEEN) */
-    .disclaimer-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.16) 0%,
-        rgba(0, 0, 0, 0.42) 50%,
-        rgba(0, 0, 0, 0.82) 100%
-      );
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px 18px;
-      text-align: center;
-      z-index: 4;
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
-    }
-
-    .disclaimer-overlay.active {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    .eye-icon {
-      width: 24px;
-      height: 24px;
-      fill: rgba(255, 255, 255, 0.9);
-      margin-bottom: 6px;
-    }
-
-    .disclaimer-title {
-      font-size: 16px;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 4px;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
-    }
-
-    .disclaimer-sub {
-      font-size: 12.5px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 14px;
-      line-height: 1.35;
-      max-width: 280px;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-    }
-
-    .continue-btn {
-      width: 88%;
-      max-width: 250px;
-      height: 42px;
-      background: #ffffff;
-      color: #000000;
+      padding: 20px 24px;
       border: none;
       border-radius: 999px;
-      font-size: 14px;
-      font-weight: 800;
+      background: linear-gradient(135deg, #ff2d55 0%, #ff6b35 100%);
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0.3px;
       cursor: pointer;
+      box-shadow: 0 12px 36px rgba(255, 45, 85, 0.5), 0 4px 16px rgba(0,0,0,0.4);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.15s ease, background-color 0.15s ease;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-    }
-
-    .continue-btn:hover {
-      background: #f0f0f0;
-      transform: scale(1.02);
-    }
-
-    .continue-btn:active {
-      transform: scale(0.97);
-    }
-
-    /* ====== 4. SECONDARY OFFER: PAYPACK VIP ACCESS ====== */
-    .link-cards-section {
-      width: 100%;
-      padding: 0 16px 14px;
-      display: flex;
-      flex-direction: column;
       gap: 10px;
+      animation: pulseCTA 2.4s ease-in-out infinite;
     }
 
-    .tg-vip-card {
-      position: relative;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 18px;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-      color: #ffffff;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-      cursor: pointer;
+    @keyframes pulseCTA {
+      0%, 100% { box-shadow: 0 12px 36px rgba(255,45,85,0.5), 0 4px 16px rgba(0,0,0,0.4); }
+      50% { box-shadow: 0 16px 48px rgba(255,45,85,0.75), 0 6px 20px rgba(0,0,0,0.5); }
     }
 
-    .tg-vip-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(42, 171, 238, 0.5);
+    .cta-main-btn:hover {
+      transform: translateY(-3px);
     }
 
-    .tg-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex: 1;
-    }
-
-    .tg-avatar-wrap {
-      position: relative;
-      width: 48px;
-      height: 48px;
-      flex-shrink: 0;
-    }
-
-    .tg-avatar-img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center 20%;
-      border: 2px solid rgba(255, 255, 255, 0.25);
-      display: block;
-    }
-
-    .tg-badge-icon {
-      position: absolute;
-      bottom: -2px;
-      right: -2px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #2AABEE;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #000000;
-    }
-
-    .tg-badge-icon svg {
-      width: 11px;
-      height: 11px;
-      fill: #ffffff;
-    }
-
-    .tg-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .tg-badge {
-      font-size: 9.5px;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      color: #2AABEE;
-      background: rgba(42, 171, 238, 0.16);
-      padding: 2px 8px;
-      border-radius: 999px;
-      display: inline-block;
-      text-transform: uppercase;
-      align-self: flex-start;
-    }
-
-    .tg-title {
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-      color: #ffffff;
-    }
-
-    .tg-sub {
-      font-size: 12px;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.72);
-      line-height: 1.3;
-    }
-
-    .tg-arrow {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-left: 8px;
-    }
-
-    .tg-arrow svg {
-      width: 16px;
-      height: 16px;
-      fill: #ffffff;
+    .cta-main-btn:active {
+      transform: scale(0.97);
+      animation: none;
     }
 
     /* ====== FOOTER ====== */
     .page-footer {
-      margin-top: 10px;
-      padding: 16px 20px 24px;
+      margin-top: auto;
+      padding: 24px 20px 24px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 10px;
     }
 
     .legal-links {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.45);
-      margin-bottom: 8px;
+      gap: 10px;
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.35);
     }
 
     .legal-links a {
@@ -670,20 +321,10 @@
       text-underline-offset: 2px;
     }
 
-    .brand-link {
-      font-size: 13px;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.65);
-      text-decoration: none;
-      letter-spacing: -0.2px;
-      margin-bottom: 12px;
-      display: inline-block;
-    }
-
     .home-bar {
       width: 125px;
       height: 4px;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255,255,255,0.7);
       border-radius: 999px;
     }
   </style>
@@ -707,104 +348,31 @@
     </div>
   </div>
 
-  <!-- ====== 2. CLONED LINK.ME STYLE PROFILE ====== -->
+  <!-- ====== 2. PROFILE PAGE (SIMPLE & DIRECT) ====== -->
   <main class="app-shell">
 
-    <!-- Top Hero Image: Framed with yellow top photo -->
+    <!-- Profile Photo -->
     <div class="hero-container">
-      <img src="assets/hero_yellow.jpg" alt="Dudinha Santinii" class="hero-img" />
+      <img src="assets/card_bed.jpg" alt="Dudinha Santinii" class="hero-img" />
       <div class="hero-gradient"></div>
     </div>
 
-    <!-- Profile Header Info -->
+    <!-- Profile Name + Handle -->
     <div class="profile-section">
       <div class="profile-name-row">
         <h2 class="profile-name">DUDINHA</h2>
-        <!-- Verified scalloped badge SVG -->
         <svg class="verified-badge" viewBox="0 0 24 24">
           <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.2 14.2l-3.8-3.8 1.41-1.41 2.39 2.39 6.19-6.19 1.41 1.41-7.6 7.6z"/>
         </svg>
       </div>
-
       <div class="profile-handle">@dudinhasantinii</div>
-
-      <!-- Social Icons -->
-      <div class="social-row">
-        <!-- Instagram -->
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-btn ig-btn" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <!-- Paypack VIP -->
-        <a href="https://paypack.fans/dudinhasantini" target="_blank" rel="noopener" class="social-icon-btn paypack-btn" aria-label="Paypack VIP">
-          <span>VIP</span>
-        </a>
-      </div>
-
-      <!-- Follower Count -->
-      <div class="followers-box">
-        <span>43,7K Seguidores no Total</span>
-        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-
-      <!-- Section Title -->
-      <div class="section-headline">
-        <span>O que você está procurando 👇</span>
-      </div>
     </div>
 
-    <!-- ====== 3. PRIMARY CONVERTING CARD: PAYPACK EXCLUSIVE VIP ====== -->
-    <div class="exclusive-card-container">
-      <div class="exclusive-card" id="exclusiveCard">
-        <!-- Padlock Badge -->
-        <div class="lock-badge">
-          <svg viewBox="0 0 24 24">
-            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
-          </svg>
-        </div>
-
-        <div class="vip-fire-pill">🔥 VIP EXCLUSIVO</div>
-
-        <!-- Exclusive Preview Photo (Visible clearly first!) -->
-        <img src="assets/card_bed.jpg" alt="Paypack VIP Exclusivo" class="card-photo" id="cardPhoto" />
-
-        <!-- Initial label shown while photo is unblurred -->
-        <div class="unlocked-label" id="unlockedLabel">VIP EXCLUSIVO (18+)</div>
-
-        <!-- Mature Content Disclaimer Overlay (Smoothly appears after 1.4s delay) -->
-        <div class="disclaimer-overlay" id="disclaimerOverlay">
-          <svg class="eye-icon" viewBox="0 0 24 24">
-            <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.44-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
-          </svg>
-          <div class="disclaimer-title">Aviso de Conteúdo Adulto</div>
-          <div class="disclaimer-sub">Acesse meu perfil oficial no Paypack para conteúdos exclusivos.</div>
-          <button class="continue-btn" id="continueBtn" type="button">
-            Entrar no Paypack (18+)
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ====== 4. SECONDARY OFFER: PAYPACK VIP ACCESS ====== -->
-    <div class="link-cards-section">
-      <a href="https://paypack.fans/dudinhasantini" target="_blank" rel="noopener" class="tg-vip-card" id="tgCard">
-        <div class="tg-left">
-          <!-- Circular preview thumbnail with VIP badge -->
-          <div class="tg-avatar-wrap">
-            <img src="assets/hero_yellow.jpg" alt="Paypack VIP" class="tg-avatar-img" />
-            <div class="tg-badge-icon" style="background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);">
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            </div>
-          </div>
-          <div class="tg-content">
-            <span class="tg-badge" style="color: #ff5252; background: rgba(255, 82, 82, 0.16);">ACESSO VIP 🔞</span>
-            <div class="tg-title">PAYPACK VIP</div>
-            <div class="tg-sub">Acesso direto ao meu perfil privado & conteúdos exclusivos 💫</div>
-          </div>
-        </div>
-        <div class="tg-arrow">
-          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
-        </div>
-      </a>
+    <!-- ====== SINGLE BIG CTA BUTTON ====== -->
+    <div class="cta-section">
+      <button class="cta-main-btn" id="ctaMainBtn" type="button">
+        😈 Meus Conteúdos Exclusivos
+      </button>
     </div>
 
     <!-- Footer -->
@@ -813,10 +381,7 @@
         <a href="#privacy">Privacidade</a>
         <span>|</span>
         <a href="#terms">Termos</a>
-        <span>|</span>
-        <a href="#report">Denunciar</a>
       </div>
-      <a href="https://link.me" class="brand-link">link.me</a>
       <div class="home-bar"></div>
     </footer>
 
@@ -826,32 +391,15 @@
     const PAYPACK_URL = "https://paypack.fans/dudinhasantini";
 
     const giftOverlay = document.getElementById('giftOverlay');
-    const giftBtn = document.getElementById('giftBtn');
-    const giftCard = document.getElementById('giftCard');
+    const giftBtn     = document.getElementById('giftBtn');
+    const giftCard    = document.getElementById('giftCard');
+    const ctaMainBtn  = document.getElementById('ctaMainBtn');
 
-    const exclusiveCard = document.getElementById('exclusiveCard');
-    const continueBtn = document.getElementById('continueBtn');
-    const disclaimerOverlay = document.getElementById('disclaimerOverlay');
-    const unlockedLabel = document.getElementById('unlockedLabel');
-    const tgCard = document.getElementById('tgCard');
-
-    let disclaimerTimer = null;
-
-    // Show the bottom image clearly first, and THEN smoothly show the +18 disclaimer
-    function triggerMatureDisclaimer() {
-      if (disclaimerTimer) clearTimeout(disclaimerTimer);
-      disclaimerTimer = setTimeout(() => {
-        disclaimerOverlay.classList.add('active');
-        if (unlockedLabel) unlockedLabel.style.opacity = '0';
-      }, 1400); // 1.4s delay so user sees the photo first
-    }
-
-    // 1. Gift Pre-lander logic: Reveals profile page (does NOT open Paypack yet)
+    // Step 1 → Step 2: gift reveals profile page
     function revealPage() {
       giftBtn.innerHTML = '<span>DESBLOQUEADO ✨</span>';
       setTimeout(() => {
         giftOverlay.classList.add('hidden');
-        triggerMatureDisclaimer();
       }, 300);
     }
 
@@ -861,24 +409,12 @@
     });
 
     giftCard.addEventListener('click', (e) => {
-      if (!giftBtn.contains(e.target)) {
-        revealPage();
-      }
+      if (!giftBtn.contains(e.target)) revealPage();
     });
 
-    // 2. Click logic: clicking Continue (18+) or card opens Paypack in new tab
-    function goToPaypack(e) {
-      if (e) e.stopPropagation();
-      continueBtn.textContent = 'Abrindo VIP... 💋';
-      window.open(PAYPACK_URL, '_blank');
-    }
-
-    continueBtn.addEventListener('click', goToPaypack);
-    exclusiveCard.addEventListener('click', goToPaypack);
-
-    // 3. Secondary Card Click Logic
-    tgCard.addEventListener('click', (e) => {
-      e.preventDefault();
+    // Step 2 → Step 3: big CTA button opens Paypack in new tab
+    ctaMainBtn.addEventListener('click', () => {
+      ctaMainBtn.textContent = '💋 Abrindo VIP...';
       window.open(PAYPACK_URL, '_blank');
     });
   </script>
